@@ -27,8 +27,6 @@ class App extends Component {
         web3: results.web3
       })
 
-      // Instantiate contract once web3 provided.
-      this.instantiateContract()
     })
     .catch(() => {
       console.log('Error finding web3.')
@@ -63,21 +61,39 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav className="navbar pure-menu pure-menu-horizontal">
-            <a href="#" className="pure-menu-heading pure-menu-link">Truffle Box</a>
-        </nav>
-
         <main className="container">
-          <div className="pure-g">
-            <div className="pure-u-1-1">
-              <h1>Good to Go!</h1>
-              <p>Your Truffle Box is installed and ready.</p>
-              <h2>Smart Contract Example</h2>
-              <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
-              <p>Try changing the value stored on <strong>line 59</strong> of App.js.</p>
-              <p>The stored value is: {this.state.storageValue}</p>
-            </div>
+        <h1>Create an ERC20 Token</h1>
+        <p>Use this site to create your own fixed-supply ERC20 token.</p>
+        <p>Some example use cases:</p>
+        <ul>
+          <li>Redeemable tickets to a culinary festival, where booths are paid for food/drinks using the token</li>
+          <li>Selling rights to your time, where one token can represent one minute</li>
+          <li>Distributing "voting shares", where holding tokens allows one to vote</li>
+        </ul>
+        <p>This tool is completely free to use -- you just need to pay Ether for gas. <a href="https://github.com/macalinao/tokengen">View the source on GitHub.</a></p>
+        <form>
+          <div className="inputGroup">
+            <label><strong>Token name</strong><small>ex. IanCoin</small></label>
+            <input type="text"/>
           </div>
+          <div className="inputGroup">
+            <label><strong>Token symbol</strong><small>ex. IAN</small></label>
+            <input type="text"/>
+          </div>
+          <div className="inputGroup">
+            <label><strong>Initial supply</strong><small>Number of tokens to generate</small></label>
+            <input type="text"/>
+          </div>
+          <div className="inputGroup">
+            <label><strong>Decimals</strong><small>Number of places to divide the token by. 0 means tokens cannot be divided.</small></label>
+            <input type="text"/>
+          </div>
+          <button>Generate my token</button>
+        </form>
+        <p>Welcome to 2017, where creating a new cryptocurrency is as simple as creating a new instance of a smart contract.</p>
+        <p>Simply enter your token parameters below to get your desired amount of currency. This can be imported into <a href="https://wallet.ethereum.org">Ethereum Wallet</a> or the wallet software of your choosing.</p>
+        <p>You can use any Web3-enabled browser to use this tool. I recommend <a href="https://metamask.io">MetaMask</a>.</p>
+        <p>This tool is free to use. All you need to pay is gas fees.</p>
         </main>
       </div>
     );
